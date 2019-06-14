@@ -15,8 +15,11 @@ class Comments extends Component {
         <header>
         <h4>Do you have any comments or suggestions?</h4>
         </header>
-        
+        <input type="textbox" placeholder="comments?" id="commentBox" />
+        <br/>
         <button onClick={this.handleClick}>Next</button>
+        <br/>
+        <br/>
         <br/>
         <h5>Review your feedback</h5>
         <h6>Feeling:</h6>

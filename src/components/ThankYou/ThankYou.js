@@ -15,13 +15,16 @@ class ThankYou extends Component {
         <header>
         <h4>Thank You for submitting feedback</h4>
         </header>
+        <button onClick={this.handleClick}>Submit More Feedback</button>
+        <br/>
+        <br/>
         <br/>
         <h5>Review your feedback</h5>
         <h6>Feeling:</h6>
         <h6>Understanding:</h6>
         <h6>Support:</h6>
         <h6>Comments:</h6>
-        <button onClick={this.handleClick}>Submit More Feedback</button>
+        
       </div>
     );
   }

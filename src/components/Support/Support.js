@@ -15,8 +15,20 @@ class Support extends Component {
         <header>
         <h4>How well do you feel supported?</h4>
         </header>
-        
+        <input type="radio" name="option" className="nameInputs"/>
+        <label className="nameInputs">1      </label>
+        <input type="radio" name="option" className="nameInputs"/>
+        <label className="nameInputs">2      </label>
+        <input type="radio" name="option" className="nameInputs"/>
+        <label className="nameInputs">3      </label>
+        <input type="radio" name="option" className="nameInputs"/>
+        <label className="nameInputs">4      </label>
+        <input type="radio" name="option" className="nameInputs"/>
+        <label className="nameInputs">5      </label>
+        <br/>
         <button onClick={this.handleClick}>Next</button>
+        <br/>
+        <br/>
         <br/>
         <h5>Review your feedback</h5>
         <h6>Feeling:</h6>
