@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
-import Feeling from './Components/Feeling/Feeling.js'
-import Plants from './Components/Plants/Plants.js'
-import Home from './Components/Home/Home.js'
-import About from './Components/About/About.js'
-
+import Feeling from '../Feeling/Feeling.js'
+import Content from '../Content/Content.js'
+import Support from '../Support/Support.js'
+import Comments from '../Comments/Comments.js'
+import ThankYou from '../ThankYou/ThankYou.js'
 class App extends Component {
   render() {
     return (
@@ -16,6 +16,7 @@ class App extends Component {
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
         </header>
+        
         <br/>
   <Route path="/" exact={true} component={Feeling} />
   
@@ -27,7 +28,7 @@ class App extends Component {
 
   <Route path="/5" component={ThankYou} />
       </div>
-      </Router>
+       </Router>
     );
   }
 }
