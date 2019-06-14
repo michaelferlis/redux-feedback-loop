@@ -4,6 +4,9 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 // import './App.css';
 
 class Comments extends Component {
+    state = {
+        comments: '',
+      }
     handleClick =()=>{
         // console.log('Animals are great!');
         this.props.history.push('/5')

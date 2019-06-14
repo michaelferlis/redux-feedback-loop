@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { connect } from 'react-redux';
 // import './App.css';
 
 class Support extends Component {
+    state = {
+        support: '',
+      }
     handleClick =()=>{
         // console.log('Animals are great!');
         this.props.history.push('/4')
@@ -31,8 +35,8 @@ class Support extends Component {
         <br/>
         <br/>
         <h5>Review your feedback</h5>
-        <h6>Feeling:</h6>
-        <h6>Understanding:</h6>
+        <h6>Feeling: {this.props.reduxState.feelingReducer.type}</h6>
+        <h6>Understanding: {this.props.reduxState.contentReducer.type}</h6>
         <h6>Support:</h6>
         <h6>Comments:</h6>
       </div>
@@ -40,4 +44,8 @@ class Support extends Component {
   }
 }
 
-export default Support;
+const mapReduxStateToProps = (reduxState) => ({
+    reduxState,
+  });
+
+  export default connect(mapReduxStateToProps)(Support);
