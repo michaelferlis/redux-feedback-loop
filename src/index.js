@@ -23,11 +23,18 @@ const contentReducer = (state=[], action) => {
     }
     return state;
 }
+const supportReducer = (state=[], action) => {
+    if(action.type === 'ADD_SUPPORT_RATING') {
+        return action.payload;
+    }
+    return state;
+}
 
 const storeInstance = createStore(
     combineReducers({
         feelingReducer,
         contentReducer,
+        supportReducer,
         
     }),
     applyMiddleware(logger)
