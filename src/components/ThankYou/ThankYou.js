@@ -5,6 +5,26 @@ import { connect } from 'react-redux';
 // import './App.css';
 
 class ThankYou extends Component {
+
+    state={
+        feedbackArray:[],
+
+    }
+
+    // componentDidMount(){
+    //     axios({
+    //         method: 'GET',
+    //         url: '/4'
+    //     }).then((response)=>{
+    //         console.log(response.data)
+    //         this.setState({
+    //             data: response.data
+    //         })
+    //     })
+    //     // this.buildList
+        
+    // }
+    
     handleClick =()=>{
         // console.log('Animals are great!');
         this.props.history.push('/')
@@ -24,7 +44,7 @@ class ThankYou extends Component {
         <h6>Feeling: {this.props.reduxState.feelingReducer.type}</h6>
         <h6>Understanding: {this.props.reduxState.contentReducer.type}</h6>
         <h6>Support: {this.props.reduxState.supportReducer.type}</h6>
-        <h6>Comments:</h6>
+        <h6>Comments: {this.props.reduxState.commentsReducer}</h6>
         
       </div>
     );

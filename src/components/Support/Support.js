@@ -61,7 +61,7 @@ class Support extends Component {
         <header>
         <h4>How well do you feel supported?</h4>
         </header>
-        <input type="radio" name="option" className="nameInputs" value="1" onChange={this.one}/>
+        <input type="radio" name="option" className="nameInputs" value="1" onClick={this.one}/>
         <label className="nameInputs">1      </label>
         <input type="radio" name="option" className="nameInputs"value="2"onClick={this.two}/>
         <label className="nameInputs">2      </label>
@@ -80,7 +80,7 @@ class Support extends Component {
         <h6>Feeling: {this.props.reduxState.feelingReducer.type}</h6>
         <h6>Understanding: {this.props.reduxState.contentReducer.type}</h6>
         <h6>Support: {this.props.reduxState.supportReducer.type}</h6>
-        <h6>Comments:</h6>
+        <h6>Comments: {this.props.reduxState.commentsReducer}</h6>
       </div>
     );
   }

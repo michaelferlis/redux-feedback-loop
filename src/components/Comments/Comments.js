@@ -11,7 +11,40 @@ class Comments extends Component {
     handleClick =()=>{
         // console.log('Animals are great!');
         this.props.history.push('/5')
+        const action= {type: 'ADD_COMMENTS', payload: this.state.comments}
+        this.props.dispatch(action)
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: {
+                feeling: this.props.reduxState.feelingReducer.type,
+                understanding: this.props.reduxState.contentReducer.type,
+                support: this.props.reduxState.supportReducer.type,
+                comments: this.props.reduxState.commentsReducer,
+            }
+          }).then( (response) => {
+            console.log(response.data);
+            }).catch((error) => {
+                console.log('Error with post', error);
+                alert('error, feedback not added');
+              })
+          
         
+        
+      }// end handleclick
+
+      handleChange =(event) =>{
+          console.log('comment working');
+          this.setState({
+            comments:  event.target.value,
+      
+            
+          })
+      }
+
+      postFeeback = ()=>{
+          console.log('post working');
+          
       }
   render() {
     return (
@@ -19,7 +52,7 @@ class Comments extends Component {
         <header>
         <h4>Do you have any comments or suggestions?</h4>
         </header>
-        <input type="textbox" placeholder="comments?" id="commentBox" />
+        <textarea rows="7" cols="50" placeholder="Commments?" value={this.state.comments} onChange={this.handleChange} />
         <br/>
         <button onClick={this.handleClick}>Next</button>
         <br/>
@@ -29,7 +62,7 @@ class Comments extends Component {
         <h6>Feeling: {this.props.reduxState.feelingReducer.type}</h6>
         <h6>Understanding: {this.props.reduxState.contentReducer.type}</h6>
         <h6>Support: {this.props.reduxState.supportReducer.type}</h6>
-        <h6>Comments:</h6>
+        <h6>Comments: {this.props.reduxState.commentsReducer}</h6>
       </div>
     );
   }

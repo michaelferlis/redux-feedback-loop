@@ -79,7 +79,7 @@ class Feeling extends Component {
         <h6>Feeling: {this.props.reduxState.feelingReducer.type}</h6>
         <h6>Understanding: {this.props.reduxState.contentReducer.type}</h6>
         <h6>Support: {this.props.reduxState.supportReducer.type}</h6>
-        <h6>Comments:</h6>
+        <h6>Comments: {this.props.reduxState.commentsReducer}</h6>
         
       </div>
     );
