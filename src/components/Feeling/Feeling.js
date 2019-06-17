@@ -52,7 +52,7 @@ class Feeling extends Component {
             type: '5',
           },
         })
-      }
+      } // 
       
   render() {
     return (
