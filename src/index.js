@@ -14,18 +14,24 @@ import {logger} from 'redux-logger';
 const feelingReducer = (state=[], action) => {
     if(action.type === 'ADD_FEELING_RATING') {
         return action.payload;
+    } else if (action.type === 'EMPTY'){
+        return [];
     }
     return state;
 }
 const contentReducer = (state=[], action) => {
     if(action.type === 'ADD_CONTENT_RATING') {
         return action.payload;
+    } else if (action.type === 'EMPTY'){
+        return [];
     }
     return state;
 }
 const supportReducer = (state=[], action) => {
     if(action.type === 'ADD_SUPPORT_RATING') {
         return action.payload;
+    } else if (action.type === 'EMPTY'){
+        return [];
     }
     return state;
 }
@@ -33,9 +39,13 @@ const supportReducer = (state=[], action) => {
 const commentsReducer = (state=[], action) => {
     if(action.type === 'ADD_COMMENTS') {
         return action.payload;
+    } else if (action.type === 'EMPTY'){
+        return [];
     }
     return state;
 }
+
+
 
 const storeInstance = createStore(
     combineReducers({

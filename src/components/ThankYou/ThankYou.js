@@ -28,6 +28,8 @@ class ThankYou extends Component {
     handleClick =()=>{
         // console.log('Animals are great!');
         this.props.history.push('/')
+        const action= {type: 'EMPTY', payload: this.state.support}
+        this.props.dispatch(action)
         
       }
   render() {
